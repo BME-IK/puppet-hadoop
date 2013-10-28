@@ -5,7 +5,7 @@ class hadoop::params {
 	include java::params
 
 	$version = $::hostname ? {
-		default			=> "0.20.203.0",
+		default			=> "1.2.1",
 	}
         
 	$master = $::hostname ? {
@@ -13,7 +13,7 @@ class hadoop::params {
 	}
         
 	$slaves = $::hostname ? {
-		default			=> [hadoop01, hadoop-02, hadoop-03] 
+		default			=> [hadoop01, hadoop02, hadoop03] 
 	}
 	$hdfsport = $::hostname ? {
 		default			=> "8020",

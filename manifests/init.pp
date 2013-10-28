@@ -118,8 +118,8 @@ class hadoop {
 		alias => "hadoop-env-sh",
 		content => template("hadoop/conf/hadoop-env.sh.erb"),
 	}
-	
-	exec { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/bin/hadoop namenode -format":
+
+	exec { "${hadoop::params::hadoop_base}/hadoop-${hadoop::params::version}/bin/hadoop namenode -format -force":
 		user => "hduser",
 		alias => "format-hdfs",
 		refreshonly => true,
