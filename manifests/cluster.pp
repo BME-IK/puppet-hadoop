@@ -12,6 +12,7 @@ class hadoop::cluster::master {
 		mode => "644",
 		alias => "hadoop-master",
 		content => template("hadoop/conf/masters.erb"),		
+		require => File["hadoop-app-dir"],
 	}
 
 }
@@ -23,5 +24,6 @@ class hadoop::cluster::slave {
 		mode => "644",
 		alias => "hadoop-slave",
 		content => template("hadoop/conf/slaves.erb"),		
+		require => File["hadoop-app-dir"],
 	}
 }
